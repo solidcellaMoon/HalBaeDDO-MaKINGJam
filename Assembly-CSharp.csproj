@@ -60,6 +60,7 @@
      <Compile Include="Assets\Scripts\JH_Scene\cameraMove.cs" />
      <Compile Include="Assets\Scripts\JH_Scene\colliderMaster.cs" />
      <Compile Include="Assets\Scripts\JH_Scene\itemManager.cs" />
+     <Compile Include="Assets\Scripts\JH_Scene\topBox.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/Yujin/Desktop/UnityProject/makingJAM_Dream/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
