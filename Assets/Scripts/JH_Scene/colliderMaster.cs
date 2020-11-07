@@ -25,7 +25,7 @@ public class colliderMaster : MonoBehaviour
             var obj = collision.gameObject;
 
             if(obj.layer == 5) {
-                Debug.Log("충돌");
+                //Debug.Log("충돌");
                 Destroy(gameObject);
             }
 

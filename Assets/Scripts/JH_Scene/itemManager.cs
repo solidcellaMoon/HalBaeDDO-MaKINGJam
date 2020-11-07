@@ -6,6 +6,9 @@ public class itemManager : MonoBehaviour
 {
 
     public int itemType;
+    public GameObject blindImage;
+    public float blindTime = 0.01f;
+    float time;
 
 
     // Start is called before the first frame update
@@ -23,11 +26,13 @@ public class itemManager : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision){
 
+        // 해당 오브젝트와 충돌한 게임 오브젝트 정보 가져오기
+        var obj = collision.gameObject;
 
-        if(itemType == 0){
-            // 블라인드
-            // n초간 큰 이미지를 출력한다
-            Debug.Log("블라인드 아이템과 충돌!");
+
+        if(itemType == 0 && obj.layer == 0){
+            blindImage.SetActive(true);
+
 
         } else if(itemType == 1){
             // 마비?
