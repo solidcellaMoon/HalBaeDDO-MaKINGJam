@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class colliderMaster : MonoBehaviour
 {
+
+    public GameObject GameOver;
+    public GameObject GamingNow;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +30,12 @@ public class colliderMaster : MonoBehaviour
 
             if(obj.layer == 5) {
                 //Debug.Log("충돌");
+                if(gameObject.layer == 0){
+                    Debug.Log("player가 땅으로 떨어짐");
+                    GameOver.SetActive(true);
+                    //GamingNow.SetActive(false);
+                    //게임오버 표시
+                }
                 Destroy(gameObject);
             }
 
