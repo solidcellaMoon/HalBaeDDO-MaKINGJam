@@ -9,8 +9,6 @@ public class PlayerMove : MonoBehaviour
     private bool IsJumping, IsPause;
     public float speed = 10f;
     public float waitTime = 1.5f;
-    //public float timer = 7f;
-    //float t = 0;
 
     Rigidbody2D rigid;
     Vector3 movement;
