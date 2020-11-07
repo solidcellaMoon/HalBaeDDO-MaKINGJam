@@ -9,12 +9,13 @@ public class itemManager : MonoBehaviour
     public GameObject blindImage;
     public float blindTime = 0.01f;
     float time;
+    //public float gravity = 0.4f;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -32,19 +33,26 @@ public class itemManager : MonoBehaviour
 
         if(itemType == 0 && obj.layer == 0){
             blindImage.SetActive(true);
+            Destroy(gameObject); 
 
 
-        } else if(itemType == 1){
+        } else if(itemType == 1 && obj.layer == 0)
+        {
             // 마비?
+            Destroy(gameObject); 
 
         } else if(itemType == 2){
             // 로켓?
 
         }
 
+        if(obj.layer == 5){
+           Destroy(gameObject); 
+        }
 
 
-        Destroy(gameObject);
+
+        
     }
 
 
