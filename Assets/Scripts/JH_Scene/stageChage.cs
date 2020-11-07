@@ -22,7 +22,7 @@ public class stageChage : MonoBehaviour
     }
 
     public void GoToIntro(){
-        //SceneManager.LoadScene("Intro");
+        SceneManager.LoadScene("Intro");
     }
 
 

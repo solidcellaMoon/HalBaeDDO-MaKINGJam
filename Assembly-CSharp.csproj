@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\JH_Scene\cameraMove.cs" />
      <Compile Include="Assets\Scripts\JH_Scene\colliderMaster.cs" />
      <Compile Include="Assets\Scripts\JH_Scene\enemyMove.cs" />
+     <Compile Include="Assets\Scripts\JH_Scene\gameoverBox.cs" />
      <Compile Include="Assets\Scripts\JH_Scene\itemManager.cs" />
      <Compile Include="Assets\Scripts\JH_Scene\stageChage.cs" />
      <Compile Include="Assets\Scripts\JH_Scene\topBox.cs" />
