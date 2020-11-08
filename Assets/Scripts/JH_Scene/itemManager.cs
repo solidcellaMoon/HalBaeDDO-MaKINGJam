@@ -32,12 +32,14 @@ public class itemManager : MonoBehaviour
 
 
         if(itemType == 0 && obj.layer == 0){
+            GetComponent<AudioSource>().Play();
             blindImage.SetActive(true);
             Destroy(gameObject); 
 
 
         } else if(itemType == 1 && obj.layer == 0)
         {
+            GetComponent<AudioSource>().Play();
             // 마비?
             Destroy(gameObject); 
 

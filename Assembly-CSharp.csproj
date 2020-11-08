@@ -55,6 +55,7 @@
      <Compile Include="Assets\Scripts\JH_Scene\stageChage.cs" />
      <Compile Include="Assets\Scripts\JH_Scene\topBox.cs" />
      <Compile Include="Assets\Scripts\Prologue\textPrint.cs" />
+     <Compile Include="Assets\Scripts\audioManager.cs" />
      <None Include="Assets\Resources\Graphics\prologue\대본.txt" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
