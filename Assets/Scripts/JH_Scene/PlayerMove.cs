@@ -12,26 +12,38 @@ public class PlayerMove : MonoBehaviour
 
     Rigidbody2D rigid;
     Vector3 movement;
-
-    //MeshRenderer mesh;//오브젝트의 재질 접근은 Meshrenderer를 통해서
-    //Material mat;
+    SpriteRenderer spriteRenderer;
+    Animator anim;    
 
         //---------------------------------------------------[Override Function]
         //Initialization
-        void Start()
+    void Start()
     {
-        //mesh = GetComponent<MeshRenderer>();
-        //mat = mesh.material;
         rigid = gameObject.GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
         IsJumping = false;                      //점프 중인지 판단할 수 있도록 bool 값 생성, 초기화
         IsPause = false;
-        //t = timer;
     }
 
     void Update()
     {
         Move();
         Jump();
+
+        //Idle 방향전환 : Direction Sprite
+        if(Input.GetButton("Horizontal"))
+        {
+            spriteRenderer.flipX = Input.GetAxisRaw("Horizontal") == 1;
+        }
+
+        //Walk sprite 방향전환
+        if(Input.GetAxis("Horizontal") == 0 || anim.GetBool("isJumping")) {
+            anim.SetBool("isWalking",false);
+        } else {
+            anim.SetBool("isWalking",true);
+        }
+        
     }
 
     //---------------------------------------------------[Movement Function]
@@ -68,6 +80,8 @@ public class PlayerMove : MonoBehaviour
                 {
                     //print("점프 가능 !");
                     IsJumping = true;
+                    anim.SetBool("isJumping",true);
+                    anim.SetBool("isWalking",false);
 
                     //Prevent Velocity amplification.
                     rigid.velocity = Vector2.zero;
@@ -97,7 +111,7 @@ public class PlayerMove : MonoBehaviour
         {
             Debug.Log("충돌");
             IsJumping = false;
-            //Destroy(gameObject);
+            anim.SetBool("isJumping",false);
         }
 
         //item 중 freeze item과 충돌했을 때
@@ -108,6 +122,11 @@ public class PlayerMove : MonoBehaviour
             /*일시정지 활성화*/
             StartCoroutine(freeze());
         }
+
+        if (obj.layer == 10) {
+            anim.SetBool("isDead",true);
+        }
+
     }
 
     IEnumerator freeze()
